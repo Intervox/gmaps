@@ -1,6 +1,6 @@
 /*!
- * GMaps.js v0.4.8-iknow.travel
- * https://github.com/Intervox/gmaps
+ * GMaps.js v0.4.8.1
+ * http://hpneo.github.com/gmaps/
  *
  * Copyright 2013, Gustavo Leon
  * Released under the MIT License.
@@ -709,6 +709,10 @@ GMaps.prototype.drawOverlay = function(options) {
     auto_show = options.auto_show;
   }
 
+  if (options.id != null) {
+    overlay.overlay_id = options.id;
+  }
+
   overlay.onAdd = function() {
     var el = document.createElement('div');
 
@@ -753,7 +757,7 @@ GMaps.prototype.drawOverlay = function(options) {
 
     options.horizontalOffset = options.horizontalOffset || 0;
     options.verticalOffset = options.verticalOffset || 0;
-
+    //console.log(overlay.el.children[0])
     var el = overlay.el,
         content = el.children[0],
         content_height = content.clientHeight,
