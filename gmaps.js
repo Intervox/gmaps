@@ -1,5 +1,5 @@
 /*!
- * GMaps.js v0.4.8.1
+ * GMaps.js v0.4.8
  * http://hpneo.github.com/gmaps/
  *
  * Copyright 2013, Gustavo Leon
@@ -716,22 +716,19 @@ GMaps.prototype.drawOverlay = function(options) {
   overlay.onAdd = function() {
     var el = document.createElement('div');
 
-    el.style.borderStyle = "none";
-    el.style.borderWidth = "0px";
-    el.style.position = "absolute";
-    el.style.zIndex = 100;
+    el.className = "gmaps-marker-container"
     el.appendChild(options.content);
 
     overlay.el = el;
 
     if (!options.layer) {
-      options.layer = 'overlayMouseTarget';
+      options.layer = 'floatPane';
     }
 
     var panes = this.getPanes(),
         overlayLayer = panes[options.layer],
         stop_overlay_events = ['contextmenu', 'DOMMouseScroll', 'dblclick', 'mousedown'];
-
+    console.log(panes);
     overlayLayer.appendChild(el);
 
     for (var ev = 0; ev < stop_overlay_events.length; ev++) {
