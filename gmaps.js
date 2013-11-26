@@ -1,5 +1,5 @@
 /*!
- * GMaps.js v0.4.8
+ * GMaps.js v0.4.8.1
  * http://hpneo.github.com/gmaps/
  *
  * Copyright 2013, Gustavo Leon
@@ -728,7 +728,7 @@ GMaps.prototype.drawOverlay = function(options) {
     var panes = this.getPanes(),
         overlayLayer = panes[options.layer],
         stop_overlay_events = ['contextmenu', 'DOMMouseScroll', 'dblclick', 'mousedown'];
-    console.log(panes);
+
     overlayLayer.appendChild(el);
 
     for (var ev = 0; ev < stop_overlay_events.length; ev++) {
@@ -754,7 +754,7 @@ GMaps.prototype.drawOverlay = function(options) {
 
     options.horizontalOffset = options.horizontalOffset || 0;
     options.verticalOffset = options.verticalOffset || 0;
-    //console.log(overlay.el.children[0])
+
     var el = overlay.el,
         content = el.children[0],
         content_height = content.clientHeight,
