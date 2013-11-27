@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Intervox/gmaps"
+    "url": "https://github.com/Intervox/gmaps/"
   },
   "author": "Gustavo Leon",
-  "homepage": "http://hpneo.github.com/gmaps/",
+  "homepage": "https://github.com/Intervox/gmaps/",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/HPNeo/gmaps/issues"
