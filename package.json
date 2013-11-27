@@ -1,6 +1,6 @@
 {
   "name": "gmaps",
-  "version": "0.4.8",
+  "version": "0.4.8.1",
   "description": "the easiest way to use Google Maps",
   "main": "gmaps.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HPNeo/gmaps"
+    "url": "https://github.com/Intervox/gmaps"
   },
   "author": "Gustavo Leon",
   "homepage": "http://hpneo.github.com/gmaps/",
