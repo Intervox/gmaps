@@ -820,12 +820,26 @@ GMaps.prototype.removeOverlay = function(overlay) {
   }
 };
 
-GMaps.prototype.removeOverlays = function() {
-  for (var i = 0, item; item = this.overlays[i]; i++) {
-    item.setMap(null);
+GMaps.prototype.removeOverlays = function(params) {
+  if (params === 'all') {
+    for (var i = 0, item; item = this.overlays[i]; i++) {
+      item.setMap(null);
+    }
+    this.overlays = [];
+  }
+  if (params === 'clusters') {
+    var addresses = [];
+    for (var i = 0, item; item = this.overlays[i]; i++) {
+      if (!item.overlay_id) {
+        item.setMap(null);
+      }
+      else {
+        addresses.push(item);
+      }
+    }
+    this.overlays = addresses;
   }
 
-  this.overlays = [];
 };
 
 GMaps.prototype.drawPolyline = function(options) {
