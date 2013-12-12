@@ -1,5 +1,16 @@
+(function(root, factory) {
+  if(typeof exports === 'object') {
+    module.exports = factory();
+  }
+  else if(typeof define === 'function' && define.amd) {
+    define('GMaps', [], factory);
+  }
+
+  root.GMaps = factory();
+
+}(this, function() {
 /*!
- * GMaps.js v0.4.8.1
+ * GMaps.js v0.4.8.2
  * http://hpneo.github.com/gmaps/
  *
  * Copyright 2013, Gustavo Leon
@@ -1681,6 +1692,7 @@ GMaps.staticMapURL = function(options){
 
   /** Map Styles **/
   if (styles) {
+    console.log(styles);
     for (var i = 0; i < styles.length; i++) {
       var styleRule = [];
       if (styles[i].featureType && styles[i].featureType != 'all' ) {
@@ -2057,3 +2069,6 @@ if (!Array.prototype.indexOf) {
       return -1;
   }
 }
+
+return GMaps;
+}));
